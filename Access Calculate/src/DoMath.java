@@ -17,6 +17,15 @@ public class DoMath {
 		System.out.println(Calculate.discriminant(1, 2, 3));
 		System.out.println(Calculate.toImproperFrac(3, 1, 2));
 		System.out.println(Calculate.toMixedNum(7, 2));
+		System.out.println(Calculate.foil(2, 3, 6, -7, "n"));
+		System.out.println(Calculate.isDivisibleBy(8,2));
+		System.out.println(Calculate.absValue(-985));
+		System.out.println(Calculate.max(4, 8));
+		System.out.println(Calculate.max(2, 9, 42));
+		System.out.println(Calculate.min(25, 19));
+		System.out.println(Calculate.round2(29.479));
+		System.out.println(Calculate.exponent(2,3));
+		System.out.println(Calculate.factorial(4));
 	}	
 	
 }
