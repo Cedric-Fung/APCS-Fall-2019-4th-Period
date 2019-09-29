@@ -4,7 +4,10 @@
  * Quadratic Describer gives you 
  * the outputs of the inputs
  */
+import java.util.*;
 public class Quadratic {
+private static Scanner userinput;
+	
 	public static double discriminant(double a, double b, double c) {
 		double answer=0;
 		answer = (b*b-4*a*c);
@@ -62,8 +65,55 @@ public class Quadratic {
 		
 	}}
 	public static String quadrDescriber (double a, double b, double c) {
-		return null; 
-}
+		
+		userinput = new Scanner(System.in);
+		double symmetry = 0;
+		double vertexX = 0;
+		double vertexY = 0;
+		String x intercepts = "";
+		double yIntercets = 0;
+		String oepns = "";
+		
+		System.out.print("a :" );
+		a = userinput.nextint();
+		System.out.print("b :" );
+		b = userinput.nextint();
+		System.out.print("c :" );
+		c = userinput.nectint();
+		
+		//determines if it opens positive (up) 
+		//or negative (down)
+		if (a < 0){
+			opens + "Down";
+		}
+		else{
+			opens = "Up";
+		}
+		
+		//Finding midline or axis of symmetry
+		symmetry = (-(b)/(2*a));
+		
+		//Determining the vertex
+		vertexX = symmetry;
+		VertexY = ((a)*(VertexX*vertexX) + (b)*(vertexX) + c)
+		
+		//Determining X intercepts
+		X intercepts = (quadform);
+		
+		//Determining yIntercept
+		yIntercept = c;
+		
+		String description = ("===================================================================================================" + "\n"
+				 + "Description of the graph of : \n"
+				 + "y = (" + a + ")x^2 + (" + b + ")x + (" + c +") \n\n"
+				 + "Opens: " + opens + "\n"
+				 + "Axis of Symmetry: " + symmetry + "\n"
+				 + "Vertex: (" + vertexX + "," + vertexY + ")" + "\n"
+				 + "x intercepts(s): " = xintercepts + "\n"
+				 + "y intercept: " + yIntercept + "\n"
+				 + "=================================================================================================");
+		return (desription);			      
+	}
 }
 
 
