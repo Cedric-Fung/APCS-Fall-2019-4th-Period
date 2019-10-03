@@ -142,9 +142,16 @@ public class Calculate {
 	//A call to round2 rounds a double correctly to 2 decimal places and 
 	//returns a double
 		public static double round2(double num) {
-			double factor = (int) ((num*100) + (0.5));
-			double answer2 = (factor / 100); 
-			return answer2;
+			if(num==0) {
+				return 0;
+			}
+			int sign = (int) (num /absValue(num));
+			int answer = (int) absValue((int)(num*100));
+			if(answer%10 >= 5) {
+				return sign * ((int)((answer + 10)/10))/100.0;
+			}else {
+				return sign * (answer/10)/100.0;
+			}
 			
 	}
 	//A call to exponent raises a value to a positive integer power. The

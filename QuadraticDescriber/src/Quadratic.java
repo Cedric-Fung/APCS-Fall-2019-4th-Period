@@ -4,13 +4,11 @@
  * Quadratic Describer gives you 
  * the outputs of the inputs
  */
-import java.util.*;
 public class Quadratic {
-private static Scanner userinput;
 	
 	public static double discriminant(double a, double b, double c) {
 		double answer=0;
-		answer = (b*b-4*a*c);
+		answer = (b*b)-(4*a*c);
 		return answer;
 	}
 	public static double sqrt(double num) {
@@ -25,9 +23,17 @@ private static Scanner userinput;
 		return round2(1)*(output);
 }
 	public static double round2(double num) {
-		double factor = (int) ((num*100) + (0.5));
-		double answer2 = (factor / 100); 
-		return answer2;	
+		if(num==0) {
+			return 0;
+		}
+		int sign = (int) (num /absValue(num));
+		int answer = (int) absValue((int)(num*100));
+		if(answer%10 >= 5) {
+			return sign * ((int)((answer + 10)/10))/100.0;
+		}else {
+			return sign * (answer/10)/100.0;
+		}
+		
 }
 	public static double max(double num1, double num2) {
 		if(num1 > num2)
@@ -49,7 +55,7 @@ private static Scanner userinput;
 
 		return num;
 }
-	public static String quadform(int a, int b, int c) {
+	public static String quadform(double a, double b, double c) {
 		if (a == 0) {
 			throw new IllegalArgumentException("invalid input");
 		}
@@ -66,25 +72,22 @@ private static Scanner userinput;
 	}}
 	public static String quadrDescriber (double a, double b, double c) {
 		
-		userinput = new Scanner(System.in);
+		String xintercepts = "";
 		double symmetry = 0;
+		String opens = "";
 		double vertexX = 0;
 		double vertexY = 0;
-		String x intercepts = "";
-		double yIntercets = 0;
-		String oepns = "";
+		double yIntercept = 0;
+		double x_subtraction = 0;
+		double x_addition = 0;
 		
-		System.out.print("a :" );
-		a = userinput.nextint();
-		System.out.print("b :" );
-		b = userinput.nextint();
-		System.out.print("c :" );
-		c = userinput.nectint();
+		//Determining yIntercept
+				 yIntercept = c;
 		
 		//determines if it opens positive (up) 
 		//or negative (down)
 		if (a < 0){
-			opens + "Down";
+			opens = "Down";
 		}
 		else{
 			opens = "Up";
@@ -95,24 +98,27 @@ private static Scanner userinput;
 		
 		//Determining the vertex
 		vertexX = symmetry;
-		VertexY = ((a)*(VertexX*vertexX) + (b)*(vertexX) + c)
+		vertexY = ((a)*(vertexX*vertexX) + (b)*(vertexX) + c);
 		
 		//Determining X intercepts
-		X intercepts = (quadform);
+		x_subtraction = ((-b - sqrt(discriminant(a, b, c))) / (2*a));
+		x_addition = ((-b + sqrt(discriminant(a, b, c))) / (2*a)) ;
+		if (x_subtraction == x_addition) {
+			xintercepts =("" + x_subtraction);
+		}
+		else {
+			xintercepts =(x_subtraction + "&" + x_addition);
+		}
 		
-		//Determining yIntercept
-		yIntercept = c;
-		
-		String description = ("===================================================================================================" + "\n"
+				String description = ("\n")
 				 + "Description of the graph of : \n"
 				 + "y = (" + a + ")x^2 + (" + b + ")x + (" + c +") \n\n"
 				 + "Opens: " + opens + "\n"
 				 + "Axis of Symmetry: " + symmetry + "\n"
 				 + "Vertex: (" + vertexX + "," + vertexY + ")" + "\n"
-				 + "x intercepts(s): " = xintercepts + "\n"
-				 + "y intercept: " + yIntercept + "\n"
-				 + "=================================================================================================");
-		return (desription);			      
+				 + "x intercepts(s): " + x_subtraction+ " " + x_addition  + "\n"
+				 + "y intercept: " + yIntercept + "\n";
+		return (description);			      
 	}
 }
 
