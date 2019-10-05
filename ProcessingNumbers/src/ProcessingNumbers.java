@@ -7,35 +7,36 @@ public class ProcessingNumbers {
 		int numRun = scan.nextInt();
 		while(numRun <= 0) {
 			System.out.println("Please enter a number more than 0");
-		}System.out.println("Please enter your list of numbers");
-		int input = scan.nextInt();
+		}
+		System.out.println("Please enter your list of numbers");
+		int num = scan.nextInt();
 		int sum = 0;
-		int min = input;
-		int max = input;
-		int evenMax = input;
-		if(max % 2 == 0) {
-			input += max;
-			evenMax = max;
-		}
+		int min = num;
+		int max = num;
+		int evenMax = num;
+		
 		for(int i = 0; i <= numRun -1; i++) {
-			int input2 = scan.nextInt();
-			if(input % 2 == 0) {
-				sum += input;
+			if(num % 2 == 0) {
+				sum += num;
 			}
-			if(input > max) {
-				max = input;
+			if(num > max) {
+				max = num;
 			}
-			if(input < min) {
-				min = input;
+			if(num < min) {
+				min = num;
 			}
-			if(input % 2 == 0 && input > evenMax) {
-				evenMax = input;
+			if(num % 2 == 0 && num > evenMax) {
+				evenMax = num;
 			}	
-		}
-		System.out.println("sum: " + sum);
+			
 		System.out.println("max: " + max);
 		System.out.println("min: " + min);
-		System.out.println("evenMax: " + evenMax);
+		if(sum == 0){
+			System.out.println("There are no even numbers. ");
+		}else{
+			System.out.println("Sum of even numbers: " + sum);
+			System.out.println("Max of even numbers: " + evenMax);
+		}
 		scan.close();
 	}
 }
