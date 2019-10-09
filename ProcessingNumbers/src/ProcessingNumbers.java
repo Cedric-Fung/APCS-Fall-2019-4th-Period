@@ -5,17 +5,19 @@ public class ProcessingNumbers {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("How many numbers do you want?");
 		int numRun = scan.nextInt();
-		while(numRun <= 0) {
-			System.out.println("Please enter a number more than 0");
-		}
-		System.out.println("Please enter your list of numbers");
-		int num = scan.nextInt();
 		int sum = 0;
-		int min = num;
-		int max = num;
-		int evenMax = num;
+		int min = 0;
+		int max = 0;
+		int evenMax = 0;
+		int num = 0;
 		
-		for(int i = 0; i <= numRun -1; i++) {
+		for(int i = 0; i < numRun; i++) {
+			System.out.println("Input next number");
+			num = scan.nextInt();
+			if(i==0) {
+				max = num;
+				min = num;
+			}
 			if(num % 2 == 0) {
 				sum += num;
 			}
@@ -25,10 +27,11 @@ public class ProcessingNumbers {
 			if(num < min) {
 				min = num;
 			}
-			if(num % 2 == 0 && num > evenMax) {
+			if((num % 2 == 0) && num > evenMax) {
 				evenMax = num;
 			}	
-			
+		}
+		
 		System.out.println("max: " + max);
 		System.out.println("min: " + min);
 		if(sum == 0){
