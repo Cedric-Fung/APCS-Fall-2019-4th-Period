@@ -28,8 +28,8 @@ public class DoMath {
 		System.out.println(Calculate.factorial(4));
 		System.out.println(Calculate.isPrime(5));
 		System.out.println(Calculate.gcf(100,10));
-		System.out.println(Calculate.sqrt(64));
-		System.out.println(Calculate.quadform(1, 8, 16));
+		System.out.println(Calculate.sqrt(81));
+		System.out.println(Calculate.quadForm(1, 6, 9));
 	}	
 	
 }

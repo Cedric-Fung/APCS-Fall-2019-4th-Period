@@ -105,10 +105,11 @@ public class Calculate {
 		//The method accepts a double and returns a double
 		public static double absValue(double num) {
 	
-			if(num < 0)
-				num=num*(-1);
-
+			if(num < 0) {
+				return num*(-1);
+			}else {
 			return num;
+			}
 	}
 	//A call to max returns the larger of the values passes. The method
 	//accepts two doubles and returns a double
@@ -150,7 +151,7 @@ public class Calculate {
 			if(answer%10 >= 5) {
 				return sign * ((int)((answer + 10)/10))/100.0;
 			}else {
-				return sign * (answer/10)/100.0;
+				return sign * (10) * (answer/10)/100.0;
 			}
 			
 	}
@@ -206,12 +207,11 @@ public class Calculate {
 				if (num < 0) {
 					throw new IllegalArgumentException("invalid input");
 				}
-				if(num < 0);
 				double output = 1;
 				while(!(absValue(num - output*output) < 0.005)) {
 					output = 0.5*(num/output + output);	
 				}
-				return round2(1)*(output);
+				return round2(output);
 	}
 	//(double) min method for quad form
 			public static double min(double answer1, double answer2) {
@@ -220,9 +220,9 @@ public class Calculate {
 			else 
 				 return answer2;
 	}
-	//A call to quadform returns an approximation on the values passed, rounded
+	//A call to quadForm returns an approximation on the values passed, rounded
 	//to two decimal places. The method accepts a double and returns a double
-			public static String quadform(int a, int b, int c) {
+			public static String quadForm(int a, int b, int c) {
 				if (a == 0) {
 					throw new IllegalArgumentException("invalid input");
 				}
@@ -230,7 +230,7 @@ public class Calculate {
 				if(discriminant < 0) {
 					return "no real roots";
 				} else if (discriminant == 0) {
-					return (-b/2*a) + "";
+					return round2(-b/2*a) + "";
 				} else {
 				double answer1= round2(-b+(sqrt(discriminant))/(2.0*a));
 				double answer2= round2(-b-(sqrt(discriminant))/(2.0*a));

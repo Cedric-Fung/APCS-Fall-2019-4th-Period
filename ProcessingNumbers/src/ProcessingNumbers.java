@@ -24,6 +24,8 @@ public class ProcessingNumbers {
 			if(num > max) {
 				max = num;
 			}
+			
+			
 			if(num < min) {
 				min = num;
 			}
