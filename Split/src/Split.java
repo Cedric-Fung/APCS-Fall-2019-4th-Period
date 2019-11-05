@@ -37,7 +37,7 @@ public class Split {
 			* the sandwich and ignores what's on the outside
 		    * What if it's a fancy sandwich with multiple pieces of bread?
 		    */
-		public static String part1()
+		public static String part1() n
 			
 
 			//Your task pt 2:
