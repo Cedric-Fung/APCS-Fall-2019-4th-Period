@@ -34,8 +34,25 @@ public class Split {
 				System.out.println(part1("breadbread"));
 	}
 	public static String part1(String Sandwich) {
-		return "";
-		System.out.print(Arrays.toString(Sandwich.split("lettuce tomato bacon mayo")));
+		String[] outputArray1 = sandwich.split("bread");
+		if(outputArray1.length <= 1){
+		return ("Not a Sandwich");
+		}
+		int bread location = sandwich.indexOf ("bread");
+		if(bread location >= 0 {
+			return outputArray1[1];
+		}else{ 
+			return "Not a sandwich";
+			}
+		}else{
+			return "Not a sandwich";
+		}
+		   }
+	
+	public static String part2(String Sandwich) {
+		String[] outputArray2 = sandwich.split (" ");
+		String noSpace = "";
+		for(int i = 0
 			//Your task Part 1:
 
 			/*Write a method that take in a string like
