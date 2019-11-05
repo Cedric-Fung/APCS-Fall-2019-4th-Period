@@ -25,36 +25,24 @@ public class Split {
 			//play around with String.split!
 
 			//What happens if you "I reallyreally likeapples".split("really") ?	
-				String[] outputArray1="I like apples!".split(" ");
-				System.out.println(Arrays.toString(outputArray1));
-				System.out.println(part1("bread"));
-				System.out.println(part1("breadham"));
-				System.out.println(part1("mayobread"));
-				System.out.println(part1("breadmayobread"));
-				System.out.println(part1("breadbread"));
+		"I reallyreally likeapples".split("really");
 	}
 	public static String part1(String Sandwich) {
 		return "";
-		System.out.print(Arrays.toString(Sandwich.split("lettuce tomato bacon mayo")));
-			//Your task Part 1:
-
-			/*Write a method that take in a string like
-
+		   /* Your task Part 1:
+			* Write a method that take in a string like
 			* "applespineapplesbreadlettucetomatobaconmayohambreadcheese"
-				
-			* describing a sandwich.
-
+			* describing a sandwich
 			* Use String.split to split up the sandwich by the word "bread" and return what's in the middle of
-
 			* the sandwich and ignores what's on the outside
-
-			* What if it's a fancy sandwich with multiple pieces of bread?
-
-			*/
+		    * What if it's a fancy sandwich with multiple pieces of bread?
+		    */
+		public static String part1()
+			
 
 			//Your task pt 2:
 
-			/*Write a method that take in a string like
+			/*Write a method that takes in a string like
 
 			* "apples pineapples bread lettuce tomato bacon mayo ham bread cheese"
 
