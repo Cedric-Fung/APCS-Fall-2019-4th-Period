@@ -25,8 +25,13 @@ public class HourGlass {
 		for(int i = 0; i < size /2; i++) {
 			hourglass += (" ");
 		}
+
 		if(size % 2 == 0) {
 			hourglass += ("|| \n");
+
+			if(size % 2 == 0){
+				hourglass += ("|| \n");
+
 		}else {
 			hourglass += ("||| \n");
 		}
@@ -55,6 +60,7 @@ public class HourGlass {
 		}
 	}
 	enter.close();
+}
 }
 }
 	
