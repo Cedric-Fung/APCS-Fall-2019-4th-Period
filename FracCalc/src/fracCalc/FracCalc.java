@@ -39,11 +39,29 @@ public static String produceAnswer(String input){
    	int[] answer = new int[2];
    	if(operator.equals("+")) {
    		answer = plusFrac((hold),(hold2));
-   	}else if(operator.equals("_")) {
+   	}else 
+		if(operator.equals("_")) {
    		answer = minusFrac((hold), (hold2));
    	}else 
    		if(operator.equals("*")) {
+		answer = timesFrac((hold), (hold2));
+	}else{
+		answer = divideFrac(hold, hold2);
    	}
+	int[] reduceImproperFrac = reduceFrac(answer);
+	if(reduceImproperFrac[0[ == 0 && reduceImproperFrac[1] != 0){
+		mixednum = reduceImproperFrac[1] + "/" + reduceImproperFrac[2];
+	}else 
+		if(reduceImproperFrac[1] == 0){
+		mixedNum = "" + reduceImproperFrac[0];
+	}else
+		if(reduceImproperFrac[0] == 0 && reduceImproperFrac[1] == 0){
+		mixednum = "0";
+	}else{
+		mixednum = reduceImproperFrac[0] + "_" + reduceImroperFrac[1] + "/" + reduceImproperFrac[2];
+	}
+		return mixednum;
+}
    	int num = 0;
     int denominator = 1;
    	if(operand2.indexOf("_") != - 1 && operand2.indexOf("/") != - 1) {
