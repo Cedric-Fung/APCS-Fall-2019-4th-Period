@@ -49,7 +49,7 @@ public static String produceAnswer(String input){
 		answer = divideFrac(hold, hold2);
    	}
 	int[] reduceImproperFrac = reduceFrac(answer);
-	if(reduceImproperFrac[0[ == 0 && reduceImproperFrac[1] != 0){
+	if(reduceImproperFrac[0] == 0 && reduceImproperFrac[1] != 0){
 		mixednum = reduceImproperFrac[1] + "/" + reduceImproperFrac[2];
 	}else 
 		if(reduceImproperFrac[1] == 0){
@@ -62,27 +62,78 @@ public static String produceAnswer(String input){
 	}
 		return mixednum;
 }
-   	int num = 0;
-    int denominator = 1;
-   	if(operand2.indexOf("_") != - 1 && operand2.indexOf("/") != - 1) {
-   		String[] mixedNum = operand2.split("_");
-   		wholeNum = Integer.parseInt(mixedNum[0]);
-   		String[] fraction = mixedNum[1].split("/");
-   		num = Integer.parseInt(fraction[0]);
-   		denominator = Integer.parseInt(fraction[1]);
-   	}else {
-   		if(operand2.indexOf(" ") == -1 && operand2.indexOf("/") != -1) {
-   		String[] fraction = operand2.split("/");
-   		num = Integer.parseInt(fraction[0]);
-   		denominator = Integer.parseInt(fraction[1]);
-   	}else {
-   		wholeNum = Integer.parseInt(operand2);
-   	}
-   	}
-   	return "whole:" + wholeNum + " numerator:" + num + " denominator:" + denominator;
+
+public static int[] reduceFrac(int[] operand) {
+	int[] fracReduce = new int [3];
+	int wholeNum = operand[0] / operand [1];
+	operand[0] = (operand[0] % operand [1]);
+	if(wholeNum != 0) {
+		operand[0] = Math.abs(operand[0]);
+	}
+	int factor = gcf(operand);
+	int denominator = Math.abs(operand[1] / factor);
+	int numerator = operand[0];
+	fracReduce[0] = wholeNum;
+	fracReduce[1] = numerator;
+	fracReduce[2] = denominator;
+		return fracReduce;
 }
-} 
-    
+
+public static double absValue(double num) {
+	if(num < 0) {
+		num *= -1;
+	}else {
+		num*= 1;
+	}
+	return num;
+}
+
+public static int gcf(int[] operand) {
+	int num = 1;
+	int factor = 1;
+	while(num <= min(absValue(operand[0]), operand[1])) {
+		if(absValue(operand[0] % num) == 0 && absValue(operand[1] % num) == 0) {
+			factor = num;
+		}
+		num++;
+	}
+	return (factor);
+}
+
+public static double min(double num, double num2) {
+	if(num < num2) {
+		return num;
+	}else {
+		return num2;
+	}
+}
+public static int[] parseOperands(String operand){
+	String[]checkWholeNum = operand.split("_");
+	String[]fraction = checkWholeNum[checkWholeNum.length -1].split("/");
+	String[] OperandThree = new String[3];
+	int underscore = operand.indexOf("_");
+	int slash = operand.indexOf("/");
+	OperandThree[2] = "1";
+	int[] operandint = new int [3];
+	if(underscore < 0 && slash >= 0) {
+	OperandThree[0] = "0";
+}
+else {
+	OperandThree[0] = checkWholeNum[0];
+}
+if(slash < 0) {
+	OperandThree[1] = "0";
+	OperandThree[2] = "1";
+}
+}
+	
+}
+{
+	
+	}
+	
+}
+
 
     // TODO: Fill in the space below with any helper methods that you think you will need
     
