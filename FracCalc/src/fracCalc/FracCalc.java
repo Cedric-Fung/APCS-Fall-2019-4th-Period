@@ -29,7 +29,7 @@ public class FracCalc {
 public static String produceAnswer(String input){ 
    
 	String[] splitInput = input.split(" ");
-    String operand1 = splitInput[0];
+    	String operand1 = splitInput[0];
    	String operator = splitInput[1];
    	String operand2 = splitInput[2];
    	int[] hold = parseOperands(operand1);
@@ -62,7 +62,6 @@ public static String produceAnswer(String input){
 	}
 		return mixednum;
 }
-
 public static int[] reduceFrac(int[] operand) {
 	int[] fracReduce = new int [3];
 	int wholeNum = operand[0] / operand [1];
@@ -78,7 +77,6 @@ public static int[] reduceFrac(int[] operand) {
 	fracReduce[2] = denominator;
 		return fracReduce;
 }
-
 public static double absValue(double num) {
 	if(num < 0) {
 		num *= -1;
@@ -87,7 +85,6 @@ public static double absValue(double num) {
 	}
 	return num;
 }
-
 public static int gcf(int[] operand) {
 	int num = 1;
 	int factor = 1;
@@ -99,7 +96,6 @@ public static int gcf(int[] operand) {
 	}
 	return (factor);
 }
-
 public static double min(double num, double num2) {
 	if(num < num2) {
 		return num;
@@ -158,7 +154,6 @@ public static int[] plusFrac(int[] operand, int[] operand2){
 	answer[1] = commonDenom[0];
 	return answer;
 }
-
 public static int[] minusFrac(int[] operand, int[] operand2){
 	int[]answer = new int[2];
 	int[] array = new int [2];
@@ -167,7 +162,6 @@ public static int[] minusFrac(int[] operand, int[] operand2){
 	answer[1] = operand[1] * operand2[1];
 	return answer;
 }
-
 public static int[] timesFrac(int[] operand, int[] operand2){
 	int[] answer = new int[2];
 	answer[0] = (operand[0] * operand2[0]);
@@ -176,7 +170,7 @@ public static int[] timesFrac(int[] operand, int[] operand2){
 }
 public static int[] divideFrac(int[] operand, int[] operand2){
 	if(operand2[0] <= -1){
-operand2[1] *= -1;
+	operand2[1] *= -1;
 	}
 	int denominator = operand2[1];
 	operans2[1] = Math.abs(operand2[0]);
