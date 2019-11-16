@@ -118,13 +118,72 @@ public static int[] parseOperands(String operand){
 	if(underscore < 0 && slash >= 0) {
 	OperandThree[0] = "0";
 }
-else {
+	else {
 	OperandThree[0] = checkWholeNum[0];
 }
-if(slash < 0) {
+	if(slash < 0) {
 	OperandThree[1] = "0";
 	OperandThree[2] = "1";
 }
+	else {
+	OperandThree[1] = fraction[0];
+	OperandThree[2] = fraction[1];
+}
+	for(int i = 0; i < OperandThree.length; i++){
+	operandInt [i] = Integer.parseInt(OperandThree[i]);
+	}
+	if(operandInt[0] < 0)
+		operandInt[1] = operandInt[1] * -1;
+	int[] improperFrac = toImproperFrac(operandInt[0], operandInt[1], opernadInt[2]);
+	return imporperFrac;
+}
+public static int[] toImproperFrac(int wholeNum, int numerator, int denominator){
+	int[] improperFrac = new int[2];
+	imporperFrac[0] = wholeNum * denominator + numerator;
+	imporperFrac[1] = denominator;
+	return improperFrac;
+}
+public static int[] plusFrac(int[] operand, int[] operand2){
+	int[] commonDenom = new int[1];
+	int[] New = new int[1];
+	if(operand[1] ==operand2[1]){
+	commonDenom[0] = operand[1];
+	New[0] = operand[0] + operand2[0];
+}else{
+	commonDenom[0] = operand[1] * operand2[1];
+	New[0] = operand[0] * operand2[1] + operand2[0] * operand [1];
+	}
+	int[] answer = new int[2];
+	answer[0] = New[0];
+	answer[1] = commonDenom[0];
+	return answer;
+}
+
+public static int[] minusFrac(int[] operand, int[] operand2){
+	int[]answer = new int[2];
+	int[] array = new int [2];
+	array[0] = (operand[0] * operand2[1]) - (operand[1] * operand2[0]);
+	answer[0] = array[0];
+	answer[1] = operand[1] * operand2[1];
+	return answer;
+}
+
+public static int[] timesFrac(int[] operand, int[] operand2){
+	int[] answer = new int[2];
+	answer[0] = (operand[0] * operand2[0]);
+	answer[1] = (operand[1] * operand2[1];
+		     return answer;
+}
+public static int[] divideFrac(int[] operand, int[] operand2){
+	if(operand2[0] <= -1){
+operand2[1] *= -1;
+	}
+	int denominator = operand2[1];
+	operans2[1] = Math.abs(operand2[0]);
+	operand2[0] = denominatpr;
+	int[] answer = timesFrac(operand, operand2);
+	return answer;
+	
 }
 	
 }
