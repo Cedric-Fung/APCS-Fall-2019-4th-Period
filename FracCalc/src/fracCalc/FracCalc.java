@@ -29,7 +29,7 @@ public class FracCalc {
 public static String produceAnswer(String input){ 
    
 	String[] splitInput = input.split(" ");
-    	String operand1 = splitInput[0];
+    String operand1 = splitInput[0];
    	String operator = splitInput[1];
    	String operand2 = splitInput[2];
    	int[] hold = parseOperands(operand1);
@@ -50,17 +50,17 @@ public static String produceAnswer(String input){
    	}
 	int[] reduceImproperFrac = reduceFrac(answer);
 	if(reduceImproperFrac[0] == 0 && reduceImproperFrac[1] != 0){
-		mixednum = reduceImproperFrac[1] + "/" + reduceImproperFrac[2];
+		mixedNum = reduceImproperFrac[1] + "/" + reduceImproperFrac[2];
 	}else 
 		if(reduceImproperFrac[1] == 0){
 		mixedNum = "" + reduceImproperFrac[0];
 	}else
 		if(reduceImproperFrac[0] == 0 && reduceImproperFrac[1] == 0){
-		mixednum = "0";
+		mixedNum = "0";
 	}else{
-		mixednum = reduceImproperFrac[0] + "_" + reduceImroperFrac[1] + "/" + reduceImproperFrac[2];
+		mixedNum = reduceImproperFrac[0] + "_" + reduceImproperFrac[1] + "/" + reduceImproperFrac[2];
 	}
-		return mixednum;
+		return mixedNum;
 }
 public static int[] reduceFrac(int[] operand) {
 	int[] fracReduce = new int [3];
@@ -126,17 +126,17 @@ public static int[] parseOperands(String operand){
 	OperandThree[2] = fraction[1];
 }
 	for(int i = 0; i < OperandThree.length; i++){
-	operandInt [i] = Integer.parseInt(OperandThree[i]);
+	operandint [i] = Integer.parseInt(OperandThree[i]);
 	}
-	if(operandInt[0] < 0)
-		operandInt[1] = operandInt[1] * -1;
-	int[] improperFrac = toImproperFrac(operandInt[0], operandInt[1], opernadInt[2]);
-	return imporperFrac;
+	if(operandint[0] < 0)
+		operandint[1] = operandint[1] * -1;
+	int[] improperFrac = toImproperFrac(operandint[0], operandint[1], operandint[2]);
+	return improperFrac;
 }
 public static int[] toImproperFrac(int wholeNum, int numerator, int denominator){
 	int[] improperFrac = new int[2];
-	imporperFrac[0] = wholeNum * denominator + numerator;
-	imporperFrac[1] = denominator;
+	improperFrac[0] = wholeNum * denominator + numerator;
+	improperFrac[1] = denominator;
 	return improperFrac;
 }
 public static int[] plusFrac(int[] operand, int[] operand2){
@@ -165,7 +165,7 @@ public static int[] minusFrac(int[] operand, int[] operand2){
 public static int[] timesFrac(int[] operand, int[] operand2){
 	int[] answer = new int[2];
 	answer[0] = (operand[0] * operand2[0]);
-	answer[1] = (operand[1] * operand2[1];
+	answer[1] = (operand[1] * operand2[1]);
 		     return answer;
 }
 public static int[] divideFrac(int[] operand, int[] operand2){
@@ -173,14 +173,13 @@ public static int[] divideFrac(int[] operand, int[] operand2){
 	operand2[1] *= -1;
 	}
 	int denominator = operand2[1];
-	operans2[1] = Math.abs(operand2[0]);
-	operand2[0] = denominatpr;
+	operand2[1] = Math.abs(operand2[0]);
+	operand2[0] = denominator;
 	int[] answer = timesFrac(operand, operand2);
 	return answer;
 	
 }
 	
-}
 {
 	
 	}
