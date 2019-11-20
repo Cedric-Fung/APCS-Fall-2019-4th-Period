@@ -2,11 +2,24 @@
 public class ArrayLabs3 {
 
 	public static void main(String[] args) {
+		
+		int[] a1 = {5, 10, 15, 20, 25, 30, 35, 40};
+		int[] a2 = {7, 14, 21, 28, 35, 42, 49, 56};
+		int[] arraySum = sum(a1, a2);
+		int   appendNum = 200;
+		int   appendArray = append(a1, appendNum);
+		int[] indexRemove = 5;
+		int   evenSUm = evenSum(appendArray);
+		rotateRight(a1);
+		System.out.println(Array.toString(ArraySum));
+		System.out.println(Array.toString(appendArray));
+		System.out.println(Array.toString(indexRemove));
+		System.out.println(evenSum);
+		
 		// TODO Auto-generated method stub
 	//1) Write a method sum that accepts two arrays of integers arr1 and arr2 and returns an array of integers, in which every element is the sum of the elements at that index for the arrays arr1 and arr2. You can assume arrays arr1 and arr2 have at least one element each and are the same length.
 	}
 	public static int[] sum(int[] arr1, int[] arr2) {
-		System.out.println("#1");
 		int[] holder = new int[arr1.length];
 				for(int i= 0; i < holder.length; i++) {
 					holder[i] = arr1[i] + arr2[i];
@@ -16,8 +29,9 @@ public class ArrayLabs3 {
 	//2) Write a method append that accepts an array of integers arr of length n and an integer num, and returns an array of integers of length n+1 that consists of the elements of arr with num appended to the end.  You can assume array arr has at least one element.
 
 	public static int[] append(int[] arr, int num) {
+		int[]
 	}
-	//3) Write a method remove that accepts an array of integers arr and an integer idx and returns an array of integers consisting of all of the elements of arr except for the element at index idx (thus, the returned array has a length of arr.length – 1).  You can assume arr has at least two elements.
+	//3) Write a method remove that accepts an array of integers arr and an integer idx and returns an array of integers consisting of all of the elements of arr except for the element at index idx (thus, the returned array has a length of arr.length â€“ 1).  You can assume arr has at least two elements.
 
 	public static int[] remove(int[] arr, int idx) {
 	}
@@ -26,7 +40,7 @@ public class ArrayLabs3 {
 	public static int sumEven(int[] arr) {
 	}
 
-	//5) Write a method rotateRight that accepts an array of integers arr and does not return a value.  The rotateRight method moves each element of arr one index to the right (element 0 goes to element 1, element 1 goes to element 2, …, element n-1 goes to element 0).  You can assume arr has at least one element.
+	//5) Write a method rotateRight that accepts an array of integers arr and does not return a value.  The rotateRight method moves each element of arr one index to the right (element 0 goes to element 1, element 1 goes to element 2, â€¦, element n-1 goes to element 0).  You can assume arr has at least one element.
 
 	public static void rotateRight(int[] arr) {
 	}
@@ -48,7 +62,7 @@ public class ArrayLabs3 {
 	sumArr
 	appendArr
 	removeArr
-	sumOfEvens (an int you don’t need Arrays.toString)
+	sumOfEvens (an int you donâ€™t need Arrays.toString)
 	a1
 	}
 
