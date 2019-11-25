@@ -71,7 +71,7 @@ public static int[] reduceFrac(int[] operand) {
 	}
 	int factor = gcf(operand);
 	int denominator = Math.abs(operand[1] / factor);
-	int numerator = operand[0];
+	int numerator = operand[0] / factor;
 	fracReduce[0] = wholeNum;
 	fracReduce[1] = numerator;
 	fracReduce[2] = denominator;
@@ -142,7 +142,7 @@ public static int[] toImproperFrac(int wholeNum, int numerator, int denominator)
 public static int[] plusFrac(int[] operand, int[] operand2){
 	int[] commonDenom = new int[1];
 	int[] New = new int[1];
-	if(operand[1] ==operand2[1]){
+	if(operand[1] == operand2[1]){
 	commonDenom[0] = operand[1];
 	New[0] = operand[0] + operand2[0];
 }else{
@@ -166,7 +166,7 @@ public static int[] timesFrac(int[] operand, int[] operand2){
 	int[] answer = new int[2];
 	answer[0] = (operand[0] * operand2[0]);
 	answer[1] = (operand[1] * operand2[1]);
-		     return answer;
+	return answer;
 }
 public static int[] divideFrac(int[] operand, int[] operand2){
 	if(operand2[0] <= -1){
